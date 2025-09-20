@@ -1,6 +1,8 @@
 // src/app/layout.tsx
 import './globals.css';
 import Link from 'next/link';
+import Script from 'next/script';
+
 
 export const metadata = {
   title: 'Portfolio App',
@@ -10,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      
       <body className="flex flex-col min-h-screen bg-gray-100">
         <header className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow">
           <div className="text-2xl font-bold">
@@ -35,6 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
       
         </main>
+        <Script
+          src="https://your-external-script.com/script.js"
+          strategy="lazyOnload"
+        />
       <footer className="bg-gray-900 text-white text-center py-4 mt-1">
         &copy; {new Date().getFullYear()} Portfolio App. All rights reserved.
       </footer> 
